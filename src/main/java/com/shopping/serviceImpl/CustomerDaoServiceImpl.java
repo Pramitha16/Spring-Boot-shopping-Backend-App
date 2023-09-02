@@ -78,5 +78,16 @@ public void updateCustomer(Customer customer) {
 public void deleteCustomer(String username) {
 	// TODO Auto-generated method stub
 	
+	String deleteQuery = "DELETE FROM CUSTOMER WHERE username='"+username+"'";
+PreparedStatement stmt;
+	
+	try {
+		stmt = connection.prepareStatement(deleteQuery);
+		stmt.executeUpdate();
+		System.out.println("Customer data deleted successfully");
+	} catch (SQLException e) {
+		
+		e.printStackTrace();
+	}
 }
 }
