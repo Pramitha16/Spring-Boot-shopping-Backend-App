@@ -42,4 +42,12 @@ public class Controller {
     	 public void deleteCustomer(@PathVariable  String username) {
     		 custService.deleteCustomer(username);
     	 }
+    	 
+    	 
+    	 @GetMapping("customer/{username}/{password}")
+    		public boolean CustomerLogin(@PathVariable String username, @PathVariable String password) {
+    			
+    			return custService.customerLoginValidation(username, password);
+    		}
+    	 
 }
